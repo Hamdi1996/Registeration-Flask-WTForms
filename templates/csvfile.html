@@ -1,0 +1,57 @@
+       {% from 'form_helper.html' import displayField %}
+       {%extends 'prelogin-layout.html'%}
+       {%block title%}UploadFile{%endblock%}
+       {% block content %}
+	<body style="background-image: url({{ url_for('static', filename='img/3.gif') }}); ">
+
+       <form action="{{ url_for('upload')}}", method="POST", class="form">
+          <h3 class="form-heading">ارفاق ملف  <a href="/home" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+         <hr/>
+         <div class="form-group shiny-input-container">
+           <label>اختر ملف </label>
+           <div class="input-group">
+           <input name="inputfile" type="file"  accept="text/csv,text/comma-separated-values,text/plain,.csv"/>
+
+           </div>
+
+         </div>
+          <hr/>
+
+
+
+         <b>أسم العنوان:</b>
+
+         <div class="form-group shiny-input-container">
+           <div class="checkbox">
+             <label>
+               <input type="checkbox" name="checkbox" />
+               <span>عنوان البيانات صحيح </span>
+             </label>
+           </div>
+         </div>
+
+
+         <div class="form-group shiny-input-container">
+           <label class="control-label" for="Sep">خط فاصل:  </label>
+           <div>
+
+             <select  class="form-control" name="select">
+               <option value="\n" selected>\n</option>
+               <option value="\r\n">\r\n</option>
+             </select>
+
+           </div>
+         </div>
+         <hr/>
+          <input type="submit" value="تقديم" class="btn btn-primary btn-lg btn-block float-left" >
+           <hr/><hr/><hr/>
+         <h4> : حفظ</h4>
+            <a name="download" class="btn btn-default btn-lg shiny-download-link ">
+              <i class="fa fa-download"></i>
+              تنزيل
+            </a>
+     </form>
+
+
+       {% endblock %}
+</body>

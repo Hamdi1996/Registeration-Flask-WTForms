@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<body style="background-image: url({{ url_for('static', filename='img/2.jpg') }});  opacity: 0.7;
+  filter: alpha(opacity=50);">
+<div class="page-header">
+ <center> <h1  dir="rtl"><font color="#b4b4b4">تحليل المشاعر للغه العربيه</font></h1></center>
+</div>
+<p class="lead"></p>
+<style>
+center
+{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+h1{
+font-size:500%;
+ text-shadow: 3px 2px red;
+
+
+}
+img{
+opacity: 0.2;
+}
+</style>
+{% endblock %}
+</body>

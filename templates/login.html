@@ -1,0 +1,31 @@
+{% from 'form_helper.html' import displayField %}
+{%extends 'prelogin-layout.html'%}
+{%block title%}Login{%endblock%}
+{% block content %}
+
+<body style="background-image: url({{ url_for('static', filename='img/11.jpg') }}); ">
+
+<div class="content">
+<form action="{{ url_for('login')}}", method="POST", class="form">
+		
+
+			{{displayField(form.email ,'البريد الالكتروني ',autocomplete='off',dir="rtl",autofocus=tru)}}
+            {{displayField(form.password,'كلمه المرور',dir="rtl",)}}
+
+            <p class="pull-right"><a href="/register">انشاء حساب</a></p>
+			<input type="submit" value="تسجيل الدخول" class="btn btn-primary btn-lg btn-block" >
+			<br>
+		{{ form.csrf_token }}
+        </form>
+
+<div>
+<style>
+.content {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+</style>
+{% endblock %}
+</body>
